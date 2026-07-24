@@ -5,7 +5,7 @@ PDF Chatbot — Streamlit + LangChain + HuggingFace Embeddings + Google Gemini
   - Çoklu bot desteği: her bot ayrı bir FAISS indeksine sahiptir
   - Kalıcılık: bot listesi bots.json'da, indeksler vectorstores/<bot_id>/ içinde tutulur
   - Yerel embedding: HuggingFace all-MiniLM-L6-v2 (504 zaman aşımı riskini ortadan kaldırır)
-  - LLM: Google Gemini 1.5 Flash (ChatGoogleGenerativeAI)
+  - LLM: Google Gemini 3.5 Flash (ChatGoogleGenerativeAI)
   - Sohbet hafızası: ConversationBufferMemory (session_state içinde)
 """
 
@@ -237,7 +237,7 @@ def make_chain(vector_store: FAISS, api_key: str) -> ConversationalRetrievalChai
     ConversationalRetrievalChain döner.
     """
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
+        model="/gemini-3.5-flash",
         google_api_key=st.secrets["GEMINI_API_KEY"],
         temperature=0.3,
         convert_system_message_to_human=True,  # Gemini sistem mesajlarını desteklemez
