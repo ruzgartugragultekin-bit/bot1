@@ -237,7 +237,7 @@ def make_chain(vector_store: FAISS, api_key: str) -> ConversationalRetrievalChai
     ConversationalRetrievalChain döner.
     """
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-pro",
+        model="gemini-pro",
         google_api_key=api_key,
         temperature=0.3,
         convert_system_message_to_human=True,  # Gemini sistem mesajlarını desteklemez
