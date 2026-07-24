@@ -576,3 +576,10 @@ if history:
         st.session_state.chains.pop(bid, None)
         st.cache_resource.clear()
         st.rerun()
+import google.generativeai as genai
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+st.write("---")
+st.write("API Anahtarınızın İzin Verdiği Modeller:")
+for m in genai.list_models():
+    if 'generateContent' in m.supported_generation_methods:
+        st.write(m.name)
