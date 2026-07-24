@@ -188,7 +188,7 @@ def extract_text_from_pdf(pdf_bytes):
 
 def build_faiss_index(text, bot_id, api_key):
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000, chunk_overlap=200,
+        chunk_size=400, chunk_overlap=50,
         separators=["\n\n", "\n", " ", ""],
     )
     chunks = splitter.split_text(text)
