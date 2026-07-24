@@ -1,12 +1,14 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
-streamlit>=1.35.0
-pypdf>=4.2.0
-langchain>=0.2.0
-langchain-text-splitters>=0.2.0
-langchain-huggingface>=0.0.3
-langchain-community>=0.2.0
-langchain-google-genai>=1.0.6
-faiss-cpu>=1.8.0
-sentence-transformers>=3.0.0
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+google-generativeai
+langchain-text-splitters
+langchain-huggingface
+faiss-cpu
+pypdf
+sentence-transformers
 torch
 torchvision
