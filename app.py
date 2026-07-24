@@ -8,6 +8,7 @@ API anahtarı  st.secrets['GEMINI_API_KEY']  ile okunur.
 
 import os
 import json
+from langchain_huggingface import HuggingFaceEmbeddings
 import uuid
 import shutil
 import tempfile
@@ -192,7 +193,7 @@ def build_faiss_index(text, bot_id, api_key):
         separators=["\n\n", "\n", " ", ""],
     )
     chunks = splitter.split_text(text)
-    embeddings = GoogleGenerativeAIEmbeddings(
+   HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2"(
         model="models/embedding-001", google_api_key=api_key,
     )
     store = FAISS.from_texts(chunks, embeddings)
@@ -203,7 +204,7 @@ def build_faiss_index(text, bot_id, api_key):
 
 @st.cache_resource(show_spinner=False)
 def load_faiss_index(bot_id, api_key):
-    embeddings = GoogleGenerativeAIEmbeddings(
+    HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2"(
         model="models/embedding-001", google_api_key=api_key,
     )
     return FAISS.load_local(
