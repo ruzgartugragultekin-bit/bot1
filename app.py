@@ -193,7 +193,7 @@ def build_faiss_index(text, bot_id, api_key):
         separators=["\n\n", "\n", " ", ""],
     )
     chunks = splitter.split_text(text)
-   HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2"(
+    HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")(
         model="models/embedding-001", google_api_key=api_key,
     )
     store = FAISS.from_texts(chunks, embeddings)
@@ -204,7 +204,7 @@ def build_faiss_index(text, bot_id, api_key):
 
 @st.cache_resource(show_spinner=False)
 def load_faiss_index(bot_id, api_key):
-    HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2"(
+    HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")(
         model="models/embedding-001", google_api_key=api_key,
     )
     return FAISS.load_local(
