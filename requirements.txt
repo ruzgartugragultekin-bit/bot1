@@ -1,14 +1,8 @@
---extra-index-url https://download.pytorch.org/whl/cpu
 streamlit
 langchain
 langchain-core
 langchain-community
-langchain-google-genai
-google-generativeai
 langchain-text-splitters
-langchain-huggingface
 faiss-cpu
 pypdf
-sentence-transformers
-torch
-torchvision
+langchain-openai
