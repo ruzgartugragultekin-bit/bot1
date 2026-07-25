@@ -205,7 +205,7 @@ def build_vectorstore(text: str, bot_id: str) -> None:
     chunks = splitter.split_text(text)
 
     # 2) Yerel embedding modeli (Google API gerekmez, 504 hata riski yok)
-   embeddings = OpenAIEmbeddings(api_key=st.secrets["OPENAI_API_KEY"])
+    embeddings = OpenAIEmbeddings(api_key=st.secrets["OPENAI_API_KEY"])
 
     # 3) FAISS indeksi oluştur ve diske kaydet
     store = FAISS.from_texts(chunks, embeddings)
